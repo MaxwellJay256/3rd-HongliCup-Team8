@@ -1,25 +1,23 @@
-%\documentclass{cumcmthesis}
-\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页，电子版提交的时候使用。
+\documentclass[withoutpreface,bwprint]{cumcmthesis}
 
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{url}   % 网页链接
 \usepackage{subcaption} % 子标题
 \title{全国大学生数学建模竞赛编写的 \LaTeX{} 模板}
-\tihao{A}
-\baominghao{4321}
-\schoolname{XX大学}
-\membera{ }
-\memberb{ }
-\memberc{ }
-\supervisor{ }%辅导老师
-\yearinput{2023}
-\monthinput{9}
-\dayinput{8}
+
+\hypersetup{
+    hidelinks,
+    colorlinks=true,
+    allcolors=black,
+    pdfstartview=Fit,
+    breaklinks=true
+}
 
 \begin{document}
 
- \maketitle
- \begin{abstract}
+\maketitle
+
+\begin{abstract}
 cumcmthesis 是为全国大学生数学建模竞赛编写的\LaTeX{}模板, 旨在让大家专注于 论文的内容写作, 而不用花费过多精力在格式的定制和调整上. 本手册是相应的参考, 其 中提供了一些环境和命令可以让模板的使用更为方便. 同时需要注意, 使用者需要有一 定的 \LaTeX{} 的使用经验, 至少要会使用常用宏包的一些功能, 比如参考文献，数学公式，图片使用，列表环境等等. 例子文件参看 \texttt{example.tex}.
 
 \begin{mdframed} [%
@@ -34,28 +32,17 @@ frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 \begin{enumerate}
 \item 论文第一页为承诺书，\textbf{\color{red}内容进行了调整}。
 
- 
-
 \end{enumerate}
 
 \end{mdframed}
 
-
-\url{https://www.latexstudio.net} 陆续推出了更优质的资源，欢迎学习 。
-
-欢迎大家到QQ群里沟通交流：91940767/478023327/640633524。我们也开通了问答区交流 \LaTeX{}技术：\url{https://ask.latexstudio.net}，欢迎大家前来交流，有问题就来这里，与大神零距离。
-
-\uwave{关注我们的微信公众号}：
-
-\centerline{\includegraphics[width=6cm]{gongzhonghao2}}
-
 \keywords{\TeX{}\quad  图片\quad   表格\quad  公式}
+
 \end{abstract}
 
-%目录  2019 明确不要目录，我觉得这个规定太好了
-%\tableofcontents
+\tableofcontents
 
-%\newpage
+\newpage
 
 \section{模板的基本使用}
 
@@ -70,51 +57,6 @@ frametitlerulewidth=.5pt, frametitlebackgroundcolor=gray!2,]
 具体安装可以参考 \href{https://github.com/OsbertWang/install-latex-guide-zh-cn/releases/}{Install-LaTeX-Guide-zh-cn} 或者其它靠谱的文章。另外可以安装一个易用的编辑器，例如 \href{https://mirrors.tuna.tsinghua.edu.cn/github-release/texstudio-org/texstudio/LatestRelease/}{\TeX{}studio} 。
 
 使用该模板前，请阅读模板的使用说明文档。下面给出模板使用的大概样式。
-
-\begin{tcode}
-    \documentclass{cumcmthesis}
-    %\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
-
-    \title{论文题目}
-    \tihao{A}            % 题号
-    \baominghao{4321}    % 报名号
-    \schoolname{你的大学}
-    \membera{成员A}
-    \memberb{成员B}
-    \memberc{成员C}
-    \supervisor{指导老师}
-    \yearinput{2017}     % 年
-    \monthinput{08}      % 月
-    \dayinput{22}        % 日
-
-    \begin{document}
-        \maketitle
-        \begin{abstract}
-            摘要的具体内容。
-            \keywords{关键词1\quad  关键词2\quad   关键词3}
-        \end{abstract}
-        \tableofcontents
-        \section{问题重述}
-        \subsection{问题的提出}
-        \section{模型的假设}
-        \section{符号说明}
-        \begin{center}
-            \begin{tabular}{cc}
-                \hline
-                \makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
-                D	    & 木条宽度（cm） \\ \hline
-            \end{tabular}
-        \end{center}
-        \section{问题分析}
-        \section{总结}
-        \begin{thebibliography}{9}%宽度9
-            \bibitem{bib:one} ....
-        \end{thebibliography}
-        \begin{appendices}
-            附录的内容。
-        \end{appendices}
-    \end{document}
-\end{tcode}
 
 根据要求，电子版论文提交时需去掉封面和编号页。可以加上 \verb|withoutpreface|  选项来实现，即：
 \begin{tcode}
