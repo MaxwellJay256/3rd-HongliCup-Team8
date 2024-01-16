@@ -112,6 +112,7 @@ if __name__ == '__main__':
 
 
     # 绘图
+    fig, axs = plt.subplots(figsize=(32, 8))
     l1, = plt.plot(timeAxis, accx, label="Acceleration X")
     l2, = plt.plot(timeAxis, filteredAccX, label="Kalman Filtered Acceleration X")
     plt.xlabel("Time(s)")
