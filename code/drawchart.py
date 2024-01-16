@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-df = np.loadtxt('D:\\python\\2024(1)\\1\\1\\1.txt')
+df = np.loadtxt('code\\reference\\1\\1.txt')
 
 
 fig, axs = plt.subplots(nrows=df.shape[0], ncols=1, figsize=(8, 2*df.shape[0]))
