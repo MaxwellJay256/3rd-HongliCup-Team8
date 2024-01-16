@@ -10,15 +10,18 @@ fileName = f'code\\{dataType}\\{subject}\\{trial}.txt'
 df = np.loadtxt(fileName)
 
 # 折线图
-fig, axs = plt.subplots(nrows=df.shape[0], ncols=1, figsize=(8, 2*df.shape[0]))
+fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(8, 4))
 fig.suptitle(f'{dataType} {subject}-{trial}')
-subtitles = ['Accel X', 'Accel Y', 'Accel Z', 'Gyro X', 'Gyro Y', 'Gyro Z']
-for i in range(df.shape[0]):
-    x = np.arange(df.shape[1])
-    y = df[i, :]
-    axs[i].plot(x, y)
+subtitles = ['Accel', 'Gyro']
+Axes = ['X','Y','Z']
+for i in range(2):
+    for j in range(3):
+        x = np.arange(df.shape[1])
+        y = df[3*i+j, :]
+        axs[i].plot(x, y, label=Axes[j])
     axs[i].set_title(subtitles[i])
 plt.tight_layout()
+plt.legend()
 plt.show()
 
 # 箱型图
