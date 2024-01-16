@@ -50,8 +50,6 @@ if __name__ == '__main__':
 
     fileName = f'code\\{dataType}\\{subject}\\{trial}.txt'
     df = np.loadtxt(fileName)
-    
-    
 
     time0 = list(range(1, df.shape[1] + 1)) # 时间节点
     time = [x * 0.002 for x in time0]
@@ -62,8 +60,6 @@ if __name__ == '__main__':
     gyroy = df[4].tolist() # y轴角速度
     gyroz = df[5].tolist() # z轴角速度
 
-    
-    
     # 卡尔曼滤波
     AccX_Filter = Kalman_Filter(0.001, 0.1)
     AccY_Filter = Kalman_Filter(0.001, 0.1)
@@ -109,10 +105,8 @@ if __name__ == '__main__':
     plt.show()
     '''
 
-
-
     # 绘图
-    fig, axs = plt.subplots(figsize=(32, 8))
+    fig, axs = plt.subplots(figsize=(10, 4))
     l1, = plt.plot(timeAxis, accx, label="Acceleration X")
     l2, = plt.plot(timeAxis, filteredAccX, label="Kalman Filtered Acceleration X")
     plt.xlabel("Time(s)")
