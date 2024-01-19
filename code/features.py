@@ -32,9 +32,10 @@ def get_features(y):
     kur = kurtosis(y) 
     # 偏斜度
     sk = skew(y)   
-    features = np.array([max_y, min_y, median_y, mean_y, var_y, peak, peak2peak, rms, crestf, margin, pulse,waveform, kur, sk]) 
+    #[max_y, min_y, median_y, mean_y, var_y, peak, peak2peak, rms, crestf, margin, pulse,waveform, kur, sk]
+    features = np.array([max_y, min_y, median_y, mean_y, var_y, peak, peak2peak, rms]) 
     return features
-
+'''
 # 读取数据
 
 data = []
@@ -51,4 +52,21 @@ for i in range(1,11):
         data.append(feature_v)
 data1 = np.array(data)
 print(data1.shape)
-np.savetxt("code\\reference.txt",data1)
+np.savetxt("code\\reference1.txt",data1)
+'''
+data = []
+
+for i in range(100):
+    dataType = 'test'
+    subject = i+1
+    fileName = f'code\\{dataType}\\{subject}\\a.txt'
+    df = np.loadtxt(fileName)
+    feature_v = np.array([get_features(df[0]),get_features(df[1]),get_features(df[2]),get_features(df[3]),get_features(df[4]),get_features(df[5])]).flatten()
+    data.append(feature_v)
+    fileName = f'code\\{dataType}\\{subject}\\b.txt'
+    df = np.loadtxt(fileName)
+    feature_v = np.array([get_features(df[0]),get_features(df[1]),get_features(df[2]),get_features(df[3]),get_features(df[4]),get_features(df[5])]).flatten()
+    data.append(feature_v)
+data1 = np.array(data)
+print(data1.shape)
+np.savetxt("code\\testreference.txt",data1)
