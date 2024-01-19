@@ -9,3 +9,6 @@
 
 # docx
 *.docx
+
+# submission
+submission/*
